@@ -13,6 +13,7 @@
       <div class="yjContainer">
         <ul class="user_page-contents">
         <% @reviews.each do |review| %>
+        <a href="/products/<%= review.product.id %>">
           <li style="background-image: url(<%= review.product.image_url %>)"  >
             <div class="meta">
               <header>
@@ -26,10 +27,11 @@
                 <%= link_to '削除',"/products/#{review.product_id}/reviews/#{review.id}", method: :delete %>
                 </p>
                 <p class="text-small" style="float: right">
-                <%= link_to '表示',"/products/#{review.product_id}/reviews/#{review.id}/edit", method: :get %>
+                <%= link_to '編集',"/products/#{review.product_id}/reviews/#{review.id}/edit", method: :get %>
                 </p>
             <% end %>
           </li>
+          </a>
           <% end %>
         </ul>
         <%= paginate(@reviews) %>
