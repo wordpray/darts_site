@@ -25,9 +25,11 @@
               <% @product2.each do |review| %>
                 <li style="border-bottom: dotted 1px">
                   <div class="thumbnail__caption">
-                    <h3 class="text-xsmall text-overflow" title="<% review.user.nickname %>">
-                      <%= review.user.nickname %><small 2014=""></small>
-                    </h3>
+                    <a href="/users/<%= review.user_id %>">
+                      <h3 class="text-xsmall text-overflow" title="<% review.user.nickname %>">
+                        <%= review.user.nickname %><small 2014=""></small>
+                      </h3>
+                    </a>
                     <p class="text-small">
                       
                       <span class="rating-star"><i class="star-actived rate-<%= review.rate %>0"></i></span>
